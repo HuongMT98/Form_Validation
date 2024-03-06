@@ -18,12 +18,20 @@ formDangKy.addEventListener('submit', (e) => {
     if (fullName.value === '' || fullName.value == null) {
         e.preventDefault();
         errorFullname.innerHTML = 'Name is required'
+    } else {
+        errorFullname.innerHTML = ''
     }
+
+
 
     if (!email.value.match(emailCheck)) {
         e.preventDefault();
         errorEmail.innerHTML = 'Valid email is required';
+    } else {
+        errorEmail.innerHTML = '';
     }
+
+
 
     if (password.value.length <= 5) {
         e.preventDefault()
@@ -31,13 +39,17 @@ formDangKy.addEventListener('submit', (e) => {
     } else if (password.value.length > 16) {
         e.preventDefault()
         errorPassword.innerHTML = "The password cannot exceed 16 characters"
+    } else {
+        errorPassword.innerHTML = ""
     }
 
 
-    if (!errorPasswordConfirm.value.match(password.value)) {
-        e.preventDefault()
-        errorPasswordConfirm.innerHTML = "Password not Same"
 
+    if (errorPasswordConfirm.value !== password.value) {
+        e.preventDefault();
+        errorPasswordConfirm.innerHTML = "Checkout your password";
+    } else {
+        errorPasswordConfirm.innerHTML = "";
     }
 
 
