@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  color: #333;
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+main {
+  background: url(https://windowscustomization.com/wp-content/uploads/2019/01/Purple-Planet.gif)
+    no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.form {
+  width: 360px;
+  min-height: 100px;
+  padding: 32px 24px;
+  text-align: center;
+  margin: 24px;
+  align-self: center;
+  box-shadow: inset rgb(255 255 255) 0px 0px 8px 0px;
+  border-radius: 2%;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  -ms-border-radius: 2%;
+  -o-border-radius: 2%;
+  background: rgb(255 255 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+.form .heading {
+  font-size: 4rem;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZ2VMpHrZPYzTDqjSroRf7Q_-PFT7B35lSQ&usqp=CAU);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.form-label {
+  color: #37ffd4;
+}
+.form .desc {
+  text-align: center;
+  color: #ffdcb5;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  line-height: 2.4rem;
+  margin-top: 16px;
+  font-weight: 300;
+}
+.form-message {
+  color: red;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+
+.form-label,
+.form-message {
+  text-align: left;
+}
+
+.form-label {
+  font-weight: 700;
+  padding-bottom: 6px;
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+}
+
+.form-control {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1.4rem;
+}
+
+.form-control:hover {
+  border: 1px solid #ffffff;
+}
+
+.form-group.invalid .form-control {
+  border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+  color: #f33a58;
+}
+
+.form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
+}
+
+.form-submit {
+  outline: none;
+  background-color: #1dbfaf;
+  margin-top: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #00ffe5;
+  color: #2c3e50;
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
+  -ms-transition: 1s all ease-in-out;
+  -o-transition: 1s all ease-in-out;
+  font-weight: 600;
+}
+
+.spacer {
+  margin-top: 36px;
+}
+
+#name_error,
+#email_error,
+#password_error,
+#passwordConfirm_error {
+  color: red;
+  text-align: start;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0 !important;
+}
