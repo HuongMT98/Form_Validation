@@ -20,33 +20,33 @@
     </header>
     <main>
         <form action="" method="POST" class="form" id="form-dangky">
-            <h1 class="heading" style="font-weight: 800;">Register Form</h1>
+            <h1 class="heading" style="font-weight: 800;">Register</h1>
 
             <div class="spacer"></div>
 
             <div class="form-group">
                 <label for="fullname" class="form-label">Full Name</label>
                 <input id="fullname" name="fullname" type="text" placeholder="Ex: John Smith" class="form-control">
-                <span id="name_error"></span>
+                <span class="form-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="email" class="form-label">Email</label>
                 <input id="email" name="email" type="text" placeholder="Ex: Email@email.com" class="form-control">
-                <span id="email_error"></span>
+                <span class="form-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="password" class="form-label">Password</label>
                 <input id="password" name="password" type="password" placeholder="Password" class="form-control">
-                <span id="password_error"></span>
+                <span class="form-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="password_confirmation" class="form-label">Password Confirm</label>
                 <input id="password_confirmation" name="password_confirmation" placeholder="Password Confirm"
                     type="password" class="form-control">
-                <span id="passwordConfirm_error"></span>
+                <span class="form-message"></span>
             </div>
 
             <button class="form-submit">Register</button>
@@ -61,7 +61,40 @@
 
 
 
-    <script src="./validation.js"></script>
+    <script src="./form_validation_JS.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mong muốn của chúng ta
+            Validator({
+                form: '#form-dangky',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#fullname', 'Input your Full Name'),
+                    Validator.isEmail('#email'),
+                    Validator.minLength('#password', 6),
+                    Validator.isRequired('#password_confirmation'),
+                    Validator.isConfirmed('#password_confirmation', function () {
+                        return document.querySelector('#form-dangky #password').value;
+                    }, 'Password not corect')
+                ],
+
+                // Nhận giá trị khi bấm nút submit
+                onSubmit: function (data) {
+                    console.log(data)
+                }
+
+            });
+
+
+        });
+
+    </script>
+
+
+
+
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
